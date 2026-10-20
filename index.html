@@ -13,7 +13,7 @@
           let index = 0;
           this.el.addEventListener('click', () => {
             index = (index + 1) % this.data.colors.length;
-            this.el.setAttribute('color', this.data.colors[index]);
+            this.el.setAttribute('material', 'color', this.data.colors[index]);
           });
         }
       });
