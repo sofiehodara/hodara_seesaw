@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Scene</title>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+      <!-- background -->
+      <a-sky color="LightBlue"></a-sky>
+      <a-plane
+        rotation="-90 0 0"
+        width="30"
+        height="30"
+        color="MediumAquamarine"
+      ></a-plane>
+
+      <!-- SEE-SAW -->
+      <a-box
+        position="0 0.4 -6"
+        width="0.3"
+        height="0.8"
+        depth="0.3"
+        color="gray"
+      ></a-box>
+      <a-box
+        id="plank"
+        position="0 0.85 -6"
+        width="3"
+        height="0.15"
+        depth="0.4"
+        color="blue"
+        animation="property: rotation; to: 0 0 15; dur: 1200; dir: alternate; loop: true; easing: easeInOutSine"
+      ></a-box>
+
+      <!-- camera -->
+      <a-entity position="0 1.6 0">
+        <a-camera></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
