@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Scene</title>
     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+       <script>
+      // CLICK: each click changes the plank to the next color in the list
+      AFRAME.registerComponent('color-toggle', {
+        schema: { colors: { type: 'array' } },
+        init: function () {
+          let index = 0;
+          this.el.addEventListener('click', () => {
+            index = (index + 1) % this.data.colors.length;
+            this.el.setAttribute('color', this.data.colors[index]);
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <a-scene cursor="rayOrigin: mouse">
